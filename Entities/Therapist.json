@@ -1,0 +1,108 @@
+{
+  "name": "Therapist",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name of the therapist"
+    },
+    "credentials": {
+      "type": "string",
+      "description": "Professional credentials (e.g., PhD, LCSW, etc.)"
+    },
+    "specialties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Areas of specialization"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Professional bio"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "address",
+        "city",
+        "lat",
+        "lng"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        }
+      }
+    },
+    "insurance_accepted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Insurance plans accepted"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Average rating"
+    },
+    "session_fee": {
+      "type": "number",
+      "description": "Session fee in dollars"
+    },
+    "availability": {
+      "type": "object",
+      "properties": {
+        "online": {
+          "type": "boolean"
+        },
+        "in_person": {
+          "type": "boolean"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "credentials",
+    "specialties",
+    "location"
+  ]
+}

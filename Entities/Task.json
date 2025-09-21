@@ -1,0 +1,66 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the recommended task"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the task"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "mindfulness",
+        "physical",
+        "creative",
+        "social",
+        "learning",
+        "self_care"
+      ],
+      "description": "Category of the task"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "easy",
+      "description": "Difficulty level of the task"
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "description": "Estimated duration in minutes"
+    },
+    "mood_target": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "sad",
+          "anxious",
+          "stressed",
+          "angry",
+          "tired",
+          "neutral",
+          "happy"
+        ]
+      },
+      "description": "Which moods this task helps with"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether user completed this task"
+    },
+    "ai_generated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this task was AI-generated for the user"
+    }
+  },
+ 

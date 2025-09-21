@@ -1,0 +1,40 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "description": "The chat message content"
+    },
+    "sender": {
+      "type": "string",
+      "enum": [
+        "user",
+        "panda"
+      ],
+      "description": "Who sent the message"
+    },
+    "mood_detected": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "anxious",
+        "stressed",
+        "angry",
+        "neutral",
+        "excited",
+        "tired"
+      ],
+      "description": "Detected mood from the message"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Chat session identifier"
+    }
+  },
+  "required": [
+    "message",
+    "sender"
+  ]
+}

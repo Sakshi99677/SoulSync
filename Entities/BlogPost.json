@@ -1,0 +1,66 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Blog post title"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly version of the title"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Brief summary of the post"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full blog post content in markdown"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author name"
+    },
+    "featured_image": {
+      "type": "string",
+      "description": "URL to featured image"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for the blog post"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "mental_health",
+        "wellness",
+        "lifestyle",
+        "research",
+        "stories",
+        "tips"
+      ],
+      "description": "Blog post category"
+    },
+    "reading_time": {
+      "type": "integer",
+      "description": "Estimated reading time in minutes"
+    },
+    "published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the post is published"
+    }
+  },
+  "required": [
+    "title",
+    "slug",
+    "excerpt",
+    "content",
+    "author",
+    "category"
+  ]
+}

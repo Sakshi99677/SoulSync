@@ -1,0 +1,53 @@
+{
+  "name": "MoodEntry",
+  "type": "object",
+  "properties": {
+    "mood": {
+      "type": "string",
+      "enum": [
+        "very_happy",
+        "happy",
+        "neutral",
+        "sad",
+        "very_sad",
+        "anxious",
+        "stressed",
+        "angry",
+        "excited",
+        "tired"
+      ],
+      "description": "User's reported mood"
+    },
+    "intensity": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Intensity of the mood (1-10 scale)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes about the mood"
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "work",
+          "studies",
+          "relationships",
+          "family",
+          "health",
+          "finances",
+          "social_media",
+          "other"
+        ]
+      },
+      "description": "What triggered this mood"
+    }
+  },
+  "required": [
+    "mood",
+    "intensity"
+  ]
+}
